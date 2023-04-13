@@ -9,7 +9,7 @@ def get_file():
     response = s3.get_object(Bucket='zeeurvashi', Key='test_file.json')
     file_content = response['Body'].read().decode('utf-8')
     print(file_content)
-    return file_content
+    return "Hello world"
 
 if __name__ == '__main__':
     app.run()
