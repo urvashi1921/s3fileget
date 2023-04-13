@@ -17,10 +17,11 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: pip install boto3 Flask
-      - name: Run Flask API
+      - name: Set environment variables
         env:
-          AWS_ACCESS_KEY_ID: AKIAVLQ7XEG2MGEORT5V
-          AWS_SECRET_ACCESS_KEY: 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
+          AWS_ACCESS_KEY_ID: "AKIAVLQ7XEG2MGEORT5V"
+          AWS_SECRET_ACCESS_KEY: "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"
+      - name: Run Flask API
         run: |
           flask run --host=0.0.0.0 --port=$PORT
         env:
