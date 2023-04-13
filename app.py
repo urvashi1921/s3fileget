@@ -3,7 +3,7 @@ import boto3
 
 app = Flask(__name__)
 
-@app.route('/get')
+@app.route('/')
 def get_file():
     s3 = boto3.client('s3')
     response = s3.get_object(Bucket='zeeurvashi', Key='test_file.json')
