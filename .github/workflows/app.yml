@@ -20,8 +20,8 @@ jobs:
         run: pip install boto3 Flask
       - name: Set environment variables
         run: |
-          echo "export MY_VAR12='AKIAVLQ7XEG2MGEORT5V'" >> $GITHUB_ENV
-          echo "export MY_VAR='84ejg+MuEeMo3zmy9g2l3uq/Qw5uNAQb+cuSLB3a'" >> $GITHUB_ENV
+          echo "export MY_VAR12='AKIAVLQ7XEG2MGEORT5V' >> $GITHUB_ENV
+          echo "export MY_VAR='84ejg+MuEeMo3zmy9g2l3uq/Qw5uNAQb+cuSLB3a' >> $GITHUB_ENV
       - name: Run Flask API
         run: |
           flask run --host=0.0.0.0 --port=$PORT
