@@ -10,3 +10,5 @@ def get_file():
     file_content = response['Body'].read().decode('utf-8')
     return file_content
 
+if __name__ == '__main__':
+    app.run()
