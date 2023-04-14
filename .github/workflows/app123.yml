@@ -1,4 +1,3 @@
-
 name: Flask API
 
 on:
@@ -19,10 +18,16 @@ jobs:
         run: pip install boto3 Flask
       - name: Set environment variables
         run: |
-          echo "export AWS_ACCESS_KEY_ID='AKIAVLQ7XEG2MGEORT5V'" >> $GITHUB_ENV
-          echo "export AWS_SECRET_ACCESS_KEY='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'" >> $GITHUB_ENV
+          echo "export MY_VAR12='AKIAVLQ7XEG2MGEORT5V'" >> $GITHUB_ENV
+          echo "export MY_VAR='84ejg+MuEeMo3zmy9g2l3uq/Qw5uNAQb+cuSLB3a'" >> $GITHUB_ENV
       - name: Run Flask API
         run: |
           flask run --host=0.0.0.0 --port=$PORT
         env:
-          PORT: 5000
+          PORT: 500
+
+
+# name: Set environment variables
+#   env:
+#     MY_VAR123:"AKIAVLQ7XEG2MGEORT5V"
+#     MY_VAR12: "84ejg+MuEeMo3zmy9g2l3uq/Qw5uNAQb+cuSLB3a"
