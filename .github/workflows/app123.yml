@@ -10,24 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.x
+      - name: Set up Python 3.10
         uses: actions/setup-python@v2
         with:
           python-version: '3.10'
       - name: Install dependencies
         run: pip install boto3 Flask
-      - name: Set environment variables
-        run: |
-          echo "export MY_VAR12='AKIAVLQ7XEG2MGEORT5V'" >> $GITHUB_ENV
-          echo "export MY_VAR='84ejg+MuEeMo3zmy9g2l3uq/Qw5uNAQb+cuSLB3a'" >> $GITHUB_ENV
       - name: Run Flask API
         run: |
+          export AWS_ACCESS_KEY_ID=AKIAVLQ7XEG2MGEORT5V
+          export AWS_SECRET_ACCESS_KEY=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
           flask run --host=0.0.0.0 --port=$PORT
         env:
-          PORT: 500
+          PORT: 5000
 
-
-# name: Set environment variables
-#   env:
-#     MY_VAR123:"AKIAVLQ7XEG2MGEORT5V"
-#     MY_VAR12: "84ejg+MuEeMo3zmy9g2l3uq/Qw5uNAQb+cuSLB3a"
